@@ -8,12 +8,11 @@ const routes = [
     {
         path: '/',
         exact: true,
-        main: () => <HomePage />
+        main: () => <HomePage />    
     },{
         path: '/product-list',
         exact : false,
-        main: () => <ProductListPage />
-
+        main: () => <ProductListPage />       
     },{
         path: '/product/add',
         exact : false,

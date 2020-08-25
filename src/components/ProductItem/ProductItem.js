@@ -2,9 +2,10 @@ import React, { Component } from "react";
 
 class ProductItem extends Component {
   render() {
-    var { product, index } = this.props;
+    var { product, index } = this.props;   
+    console.log(this.props); 
     var statusName = product.status ? 'Còn Hàng' : 'Hết Hàng';
-    var statusClass = product.status ? 'warining' : 'default';
+    var statusClass = product.status ? 'warning' : 'default';
     return (
       <>
         <tr>
@@ -18,11 +19,11 @@ class ProductItem extends Component {
             </span>
           </td>
           <td>
-            <button type="button" class="btn btn-success mr-10">
+            <button type="button" className="btn btn-success mr-10">
               Sửa
             </button>
 
-            <button type="button" class="btn btn-danger mr-10">
+            <button type="button" className="btn btn-danger mr-10">
               Xóa
             </button>
           </td>
