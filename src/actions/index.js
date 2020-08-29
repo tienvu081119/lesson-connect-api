@@ -49,17 +49,32 @@ export const actAddProduct = (product) =>{
     }
 }
 
-export const actGetProdctRequest = (id) =>{
+export const actGetProductRequest = (id) =>{
     return dispath =>{
         return callApi(`products/${id}`, 'GET', null).then(res=>{   
-            dispath(actGetProdct(res.data));
+            dispath(actGetProduct(res.data));
         });
     }
 }
 
-export const actGetProdct = (product) =>{
+export const actGetProduct = (product) =>{
     return {
         type: Typers.EDIT_PRODUCT,
+        product
+    }
+}
+
+export const actUpdateProductRequest = (product) =>{
+    return dispatch =>{
+        return callApi(`products/${product.id}`,'PUT',product).then(res =>{
+            dispatch(actUpdateProduct(res.data));
+        });
+    }
+}
+
+export const actUpdateProduct = (product) =>{
+    return {
+        type: Typers.UPDATE_PRODUCT,
         product
     }
 }
